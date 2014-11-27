@@ -38,7 +38,11 @@
 // called on every touch in this scene
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
+    printf("This is a neat command!\n");
+    
     CGPoint touchLocation = [touch locationInNode:_scrollPane];
+    
+    printf("This is a neat command!\n");
     
     // start catapult dragging when a touch inside of the catapult arm occurs
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation))
