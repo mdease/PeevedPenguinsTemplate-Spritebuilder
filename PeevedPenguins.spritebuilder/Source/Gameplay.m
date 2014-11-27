@@ -38,19 +38,15 @@
 // called on every touch in this scene
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    printf("This is a neat command!\n");
-    
     CGPoint touchLocation = [touch locationInNode:_scrollPane];
-    
-    printf("This is a neat command!\n");
     
     // start catapult dragging when a touch inside of the catapult arm occurs
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation))
     {
-        printf("This is a neat command!\n");
-        
         // move the mouseJointNode to the touch position
         _mouseJointNode.position = touchLocation;
+        
+        printf("This is a neat command!\n");
         
         // setup a spring joint between the mouseJointNode and the catapultArm
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
@@ -59,6 +55,8 @@
 
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
+    printf("This is a neat command!\n");
+    
     // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_scrollPane];
     _mouseJointNode.position = touchLocation;
