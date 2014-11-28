@@ -134,9 +134,7 @@
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
 }
 
-- (void)sealRemoved:(CCNode *)seal {
-    [seal removeFromParent];
-    
+- (void)sealRemoved:(CCNode *)seal {    
     // load particle effect
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
     // make the particle effect clean itself up, once it is completed
